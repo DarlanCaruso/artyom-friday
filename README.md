@@ -22,7 +22,7 @@ npm start
 ### SSL Certificate
 
 É gerado uma simulação de um certificado SSL para acessar o microfone no navegador Chrome. Em caso de bloqueio de acesso basta ignora-lo.
-Se houver erro em executar o comando *npm start* seu SSL Key pode ter expirado, para isso basta executar o commando  e executar o projeto novamente:
+Se houver erro em executar o comando *npm start* seu SSL Key pode ter expirado, para isso basta executar o commando e testar o projeto novamente:
 
 ```sh
 openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
