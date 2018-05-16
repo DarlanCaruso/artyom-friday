@@ -1,0 +1,34 @@
+body {
+  background-color: #000000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23180d1c' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23261431' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23351947' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23451e5e' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23552277' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  }
+
+#config {
+  position: absolute;
+  margin: 20px;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+#texto {
+  display: inline-block;
+  padding: 5px;
+  background-color: rgba(0,0,0,0.2);
+  text-align: center;
+  color: white;
+}
+
+.container {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+}
+
+.ui.modal .actions >.button {
+  margin-left: 0 !important; 
+}

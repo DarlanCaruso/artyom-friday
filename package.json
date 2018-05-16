@@ -1,0 +1,29 @@
+{
+  "name": "projeto-sextaf2",
+  "version": "1.0.0",
+  "description": "Projeto de reconhecimento de voz e ação com JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "server": "http-server -S -C cert.pem -o",
+    "build": "npx babel app.js --out-file app-compiled.js",
+    "start": "npm run build && npm run server",
+    "ngrok": "ngrok http 8080 --host-header=localhost:8080"
+  },
+  "keywords": [
+    "javascript",
+    "friday",
+    "jarvis",
+    "google"
+  ],
+  "author": "Darlan Caruso <devcaruso@gmail.com> (http://darlancaruso.com.br/)",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.22.1",
+    "semantic-ui": "^2.3.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

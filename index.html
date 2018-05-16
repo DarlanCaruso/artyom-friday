@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>F.R.I.D.A.Y.</title>
+  <link rel="stylesheet" href="semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+  <!-- Botao de Configurações -->
+  <button onclick="abrirModal()" id="config" class="ui inverted basic icon circular button">
+    <i class="cog icon"></i>
+  </button>
+
+  <!-- Local onde o texto será exibido -->
+  <div class="container">
+    <span id="texto">Me pergunte algo...</span>
+  </div>
+
+  <!-- Caixa Modal de Configurações -->
+  <div class="ui modal">
+    <!-- Titulo -->
+    <div class="header">Configurações</div>
+    <!-- Conteudo -->
+    <div class="content">
+      <!-- Alterar Idioma -->
+      <form class="ui form">
+        <div class="two fields">
+          <div class="field">
+            <label>Idioma</label>
+            <select class="ui fluid dropdown">
+              <option value="">Idioma</option>
+              <option value="ru-RU">Russo</option>
+              <option value="ja-JP">Japonês</option>
+              <option value="nl-NL">Holandes</option>
+              <option value="zh-CN">Chinês (Tradicional)</option>
+              <option value="zh-HK">Chinês (Simplificado)</option>
+              <option value="es-US">Inglês</option>
+              <option value="pt-PT">Português Brasileiro</option>
+              <option value="es-ES">Espanhol</option>
+              <option value="de-DE">Alemão</option>
+              <option value="fr-FR">Francês</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Velocidade de fala</label>
+            <select class="ui fluid dropdown">
+              <option value="">Velocidade</option>
+              <option value="0.25">0.25</option>
+              <option value="0.5">0.5</option>
+              <option value="0.75">0.75</option>
+              <option value="1">Normal</option>
+              <option value="1.25">1.25</option>
+              <option value="1.5">1.5</option>
+              <option value="2">2</option>
+            </select>
+          </div>
+        </div>
+        <div class="ui segment">
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" checked="checked" name="listen">
+              <label>Habilite para ativar a função de escutar</label>
+            </div>
+          </div>
+        </div>
+        <div class="ui segment">
+          <div class="field">
+            <div class="ui toggle checkbox">
+              <input type="checkbox" checked="checked" name="continuous">
+              <label>Habilite para que F.R.I.D.A.Y. possa responder mais de uma pergunta</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Botoes de Ação -->
+    <div class="actions">
+      <div class="ui approve inverted green button">Salvar</div>
+      <div class="ui cancel inverted red button">Cancelar</div>
+    </div>
+  </div>
+
+</body>
+<script src="jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="moment.min.js" type="text/javascript"></script>
+<script src="moment-locale-pt-br.js"></script>
+<script src="semantic/dist/semantic.min.js"></script>
+<script src="artyom.window.min.js"></script>
+<script src="app-compiled.js"></script>
+
+</html>
