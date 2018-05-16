@@ -4,7 +4,7 @@ Projeto de reconhecimento de voz e ação com JavaScript utilizando a API [Artyo
 
 ### Instalação
 
-Baixe os arquivos do projeto, navegue até a pasta e execute o comando abaixo para instalar as depêndencias.
+Baixe os arquivos do projeto, navegue até a pasta pelo terminal e execute o comando abaixo para instalar as depêndencias.
 
 ```sh
 npm install
@@ -12,8 +12,8 @@ npm install
 
 ### Executando projeto
 
-Depois de todas as depêndencias instaladas, execute o comando abaixo para executar o projeto.
-É necessário que você tenha um microfone para testar o F.R.I.D.A.Y.
+Depois de todas as depêndencias instaladas, digite o comando abaixo para executar o projeto.
+É necessário que você possua um microfone para testar o F.R.I.D.A.Y.
 
 ```sh
 npm start
