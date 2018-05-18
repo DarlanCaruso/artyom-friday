@@ -8,6 +8,7 @@
     "server": "http-server -S -C cert.pem -o",
     "build": "npx babel app.js --out-file app-compiled.js",
     "start": "npm run build && npm run server",
+    "static": "npm run build && http-server -o",
     "ngrok": "ngrok http 8080 --host-header=localhost:8080"
   },
   "keywords": [
