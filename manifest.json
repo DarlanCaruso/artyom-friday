@@ -1,0 +1,20 @@
+{
+  "short_name": "F.R.I.D.A.Y.",
+  "name": "Reconhecimendo de Voz em Javascript",
+  "icons": [
+    {
+      "src": "/img/brain128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "/img/brain512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#bdc3c7",
+  "display": "browser",
+  "theme_color": "#1abc9c"
+}

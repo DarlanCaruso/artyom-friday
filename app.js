@@ -11,6 +11,10 @@ function abrirModal() {
     .modal('show');
 };
 
+function salvarConfig() {
+  console.log('Teste');
+};
+
 // Artyom
 
 const artyom = new Artyom();

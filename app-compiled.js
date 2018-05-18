@@ -10,6 +10,10 @@ function abrirModal() {
   $('.ui.modal').modal('setting', 'transition', 'fade').modal('setting', 'closable', false).modal('show');
 };
 
+function salvarConfig() {
+  console.log('Teste');
+};
+
 // Artyom
 
 var artyom = new Artyom();

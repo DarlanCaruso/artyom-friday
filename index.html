@@ -5,47 +5,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#1abc9c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>F.R.I.D.A.Y.</title>
+  <link rel="shortcut icon" href="img/brain16x16.png">
   <link rel="stylesheet" href="semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="css/estilo.css">
+  <link rel="manifest" href="manifest.json">
 </head>
 
 <body>
-  <!-- Botao de Configurações -->
-  <button onclick="abrirModal()" id="config" class="ui inverted basic icon circular button">
-    <i class="cog icon"></i>
-  </button>
+  <section id="content">
+    <!-- Botao de Configurações -->
+    <button onclick="abrirModal()" id="config" class="ui inverted basic icon circular button">
+      <i class="cog icon"></i>
+    </button>
 
-  <!-- Local onde o texto será exibido -->
-  <div class="container">
-    <span id="texto">Me pergunte algo...</span>
-  </div>
+    <!-- Local onde o texto será exibido -->
+    <div class="container">
+      <span id="texto">Me pergunte algo...</span>
+    </div>
 
-  <!-- Caixa Modal de Configurações -->
-  <div class="ui modal">
-    <!-- Titulo -->
-    <div class="header">Configurações</div>
-    <!-- Conteudo -->
-    <div class="content">
-      <!-- Alterar Idioma -->
-      <form class="ui form">
-        <div class="two fields">
-          <div class="field">
-            <label>Idioma</label>
-            <select class="ui fluid dropdown">
-              <option value="">Idioma</option>
-              <option value="ru-RU">Russo</option>
-              <option value="ja-JP">Japonês</option>
-              <option value="nl-NL">Holandes</option>
-              <option value="zh-CN">Chinês (Tradicional)</option>
-              <option value="zh-HK">Chinês (Simplificado)</option>
-              <option value="es-US">Inglês</option>
-              <option value="pt-PT">Português Brasileiro</option>
-              <option value="es-ES">Espanhol</option>
-              <option value="de-DE">Alemão</option>
-              <option value="fr-FR">Francês</option>
-            </select>
-          </div>
+    <!-- Caixa Modal de Configurações -->
+    <div class="ui modal">
+      <!-- Titulo -->
+      <div class="header">Configurações</div>
+      <!-- Conteudo -->
+      <div class="content">
+        <!-- Alterar Idioma -->
+        <form class="ui form">
           <div class="field">
             <label>Velocidade de fala</label>
             <select class="ui fluid dropdown">
@@ -59,48 +47,37 @@
               <option value="2">2</option>
             </select>
           </div>
-        </div>
-        <div class="ui segment">
-          <div class="field">
-            <div class="ui toggle checkbox">
-              <input type="checkbox" checked="checked" name="listen">
-              <label>Habilite para ativar a função de escutar</label>
-            </div>
-          </div>
-        </div>
-        <div class="ui segment">
-          <div class="field">
-            <div class="ui toggle checkbox">
-              <input type="checkbox" checked="checked" name="continuous">
-              <label>Habilite para que F.R.I.D.A.Y. possa responder mais de uma pergunta</label>
-            </div>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
+      <!-- Botoes de Ação -->
+      <div class="actions">
+        <div class="ui approve inverted green button" onclick="salvarConfig()">Salvar</div>
+        <div class="ui cancel inverted red button">Cancelar</div>
+      </div>
     </div>
-    <!-- Botoes de Ação -->
-    <div class="actions">
-      <div class="ui approve inverted green button">Salvar</div>
-      <div class="ui cancel inverted red button">Cancelar</div>
+  </section>
+  <footer class="rodape">
+    <div>Icons made by
+      <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
+      <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
+      <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
     </div>
-  </div>
-
+  </footer>
 </body>
 <script>
-  if('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
       navigator.serviceWorker.register('service-worker.js')
-        .then(function(registro) {
+        .then(function (registro) {
           console.log(`Service Worker está registrado corretamente,  ${registro.scope}`);
         })
-        .catch(function(erro) {
+        .catch(function (erro) {
           console.log(`Erro ao registrar Service Worker,  ${erro}`);
         });
     });
   };
 </script>
-<script src="js/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
+<script src="js/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 <script src="js/moment.min.js" type="text/javascript"></script>
 <script src="js/moment-locale-pt-br.js"></script>
 <script src="semantic/dist/semantic.min.js"></script>

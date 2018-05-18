@@ -9,7 +9,8 @@ var urlsToCache = [
   '/js/moment.min.js',
   '/js/moment-locale-pt-br.js',
   '/semantic/dist/semantic.min.js',
-  '/semantic/dist/semantic.min.css'
+  '/semantic/dist/semantic.min.css',
+  '/manifest.json'
 ];
 
 self.addEventListener('install', function (event) {
