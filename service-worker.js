@@ -1,4 +1,5 @@
-const CACHE = 'my-static-files';
+const CACHE_NAME = 'my-static-files';
+const CACHE_DATA = 'my-data-cache';
 var urlsToCache = [
   '/',
   '/app-compiled.js',
@@ -11,32 +12,58 @@ var urlsToCache = [
   '/semantic/dist/semantic.min.css'
 ];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   console.log(`Instalando Service Worker: ${event}`);
 
   return event.waitUntil(
-    self.caches.open(CACHE)
-      .then(function(cache) {
+    self.caches.open(CACHE_NAME)
+      .then(function (cache) {
         return cache.addAll(urlsToCache);
       })
   );
 });
 
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   console.log(`Ativando Service Worker: ${event}`);
 
-  var cacheWhiteList = ['my-static-files'];
+  var cacheWhiteList = [CACHE_NAME, CACHE_DATA];
 
-  return self.waitUntil(
+  return event.waitUntil(
     self.caches.keys()
-      .then(function(cacheNames) {
+      .then(function (cacheNames) {
         return Promise.all(
-          cacheNames.map(function(cacheName) {
-            if(cacheWhiteList.indexOf(cacheName) === -1) {
+          cacheNames.map(function (cacheName) {
+            if (cacheWhiteList.indexOf(cacheName) === -1) {
               return self.caches.delete(cacheName);
-            } 
+            }
           })
         );
       })
   );
+});
+
+self.addEventListener('fetch', function (event) {
+  var dataUrl = 'https://testeurl.com';
+
+  if (event.request.url.indexOf(dataUrl) === -1) {
+    event.respondWith(
+      self.caches.match(event.request)
+        .then(function (response) {
+          return response || self.fetch(event.request);
+        })
+    );
+  } else {
+    event.respondWith(
+      self.fetch(event.request)
+        .then(function (response) {
+          return self.caches.open(CACHE_DATA)
+            .then(function (cache) {
+              cache.put(event.request.url, response.clone());
+              return response;
+            });
+        }).catch(function (erro) {
+          return self.caches.match(event.request);
+        })
+    );
+  };
 });
