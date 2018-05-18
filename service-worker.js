@@ -21,3 +21,22 @@ self.addEventListener('install', function(event) {
       })
   );
 });
+
+self.addEventListener('activate', function(event) {
+  console.log(`Ativando Service Worker: ${event}`);
+
+  var cacheWhiteList = ['my-static-files'];
+
+  return self.waitUntil(
+    self.caches.keys()
+      .then(function(cacheNames) {
+        return Promise.all(
+          cacheNames.map(function(cacheName) {
+            if(cacheWhiteList.indexOf(cacheName) === -1) {
+              return self.caches.delete(cacheName);
+            } 
+          })
+        );
+      })
+  );
+});
