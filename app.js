@@ -16,7 +16,6 @@ function salvarConfig() {
 };
 
 // Artyom
-
 const artyom = new Artyom();
 
 const config = {
@@ -43,7 +42,7 @@ var funcSaudadao = {
           artyom.dontObey();
         },
         onEnd: function () {
-          artyom.intialize(config);
+          artyom.initialize(config);
         }
       });
     } else if (i == 3) {
@@ -100,12 +99,12 @@ var funcPagina = {
 };
 
 artyom.redirectRecognizedTextOutput(function (texto, final) {
-  var span = document.querySelector("#texto");
+  var input = document.querySelector("#texto");
 
   if (final) {
-    span.innerHTML = texto;
+    input.value = texto;
   } else {
-    span.innerHTML = '.';
+    input.value = '.';
   }
 });
 

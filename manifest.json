@@ -3,12 +3,12 @@
   "name": "Reconhecimendo de Voz em Javascript",
   "icons": [
     {
-      "src": "/img/brain128x128.png",
+      "src": "/img/.png",
       "type": "image/png",
       "sizes": "128x128"
     },
     {
-      "src": "/img/brain512x512.png",
+      "src": "/img/.png",
       "type": "image/png",
       "sizes": "512x512"
     }
