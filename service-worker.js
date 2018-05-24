@@ -6,6 +6,7 @@ var urlsToCache = [
   '/css/estilo.css',
   '/js/artyom.window.min.js',
   '/js/jquery.min.js',
+  '/js/jquery.easing.min.js',
   '/js/moment.min.js',
   '/js/moment-locale-pt-br.js',
   '/semantic/dist/semantic.min.js',

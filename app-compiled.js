@@ -1,31 +1,49 @@
 'use strict';
 
+// jQuery Ease Scrolling
+$('a.item[href*="#"]:not([href="#"])').click(function () {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top - 54
+      }, 1000, "easeInOutExpo");
+      return false;
+    }
+  }
+});
+
 // Semantic UI Basic
 $('.ui.dropdown').dropdown();
 
-// App 
-var botaoConfig = document.querySelector('#config');
-
-function abrirModal() {
-  $('.ui.modal').modal('setting', 'transition', 'fade').modal('setting', 'closable', false).modal('show');
-};
-
-function salvarConfig() {
-  console.log('Teste');
-};
-
-// Artyom
+// Instância Artyom
 var artyom = new Artyom();
 
-var config = {
-  lang: 'pt-PT',
-  continuous: true,
-  debug: true,
-  listen: true,
-  speed: 1
+// Cria Atryom
+function createArtyom() {
+  var speed = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+
+  var config = {
+    lang: 'pt-PT',
+    continuous: true,
+    debug: true,
+    listen: true,
+    speed: speed
+  };
+
+  return artyom.initialize(config);
 };
 
-artyom.initialize(config);
+createArtyom();
+
+// Configuração Artyom
+function configureArtyom() {
+  var valor = document.querySelector("#velocidade").value;
+
+  createArtyom(valor);
+  $('body').dimmer('show');
+};
 
 artyom.say("Seja bem-vindo. Como posso ajudar?");
 
@@ -35,15 +53,7 @@ var funcSaudadao = {
     if (i == 0 || i == 1) {
       artyom.sayRandom('Oi', 'Olá');
     } else if (i == 2) {
-      artyom.say('Bom dia!', {
-        onStart: function onStart() {
-          artyom.fatality();
-          artyom.dontObey();
-        },
-        onEnd: function onEnd() {
-          artyom.initialize(config);
-        }
-      });
+      artyom.say('Bom dia!');
     } else if (i == 3) {
       artyom.say('Sou uma máquina, então sim');
     }
@@ -106,6 +116,12 @@ artyom.redirectRecognizedTextOutput(function (texto, final) {
     input.value = '.';
   }
 });
+
+function enviaComando() {
+  var input = document.querySelector("#texto").value;
+
+  artyom.simulateInstruction(input);
+};
 
 artyom.addCommands(funcSaudadao);
 artyom.addCommands(funcHoras);

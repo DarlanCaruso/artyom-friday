@@ -1,32 +1,45 @@
+// jQuery Ease Scrolling
+$('a.item[href*="#"]:not([href="#"])').click(function () {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: (target.offset().top - 54)
+      }, 1000, "easeInOutExpo");
+      return false;
+    }
+  }
+});
+
 // Semantic UI Basic
 $('.ui.dropdown').dropdown();
 
-// App 
-const botaoConfig = document.querySelector('#config');
-
-function abrirModal() {
-  $('.ui.modal')
-    .modal('setting', 'transition', 'fade')
-    .modal('setting', 'closable', false)
-    .modal('show');
-};
-
-function salvarConfig() {
-  console.log('Teste');
-};
-
-// Artyom
+// Instância Artyom
 const artyom = new Artyom();
 
-const config = {
-  lang: 'pt-PT',
-  continuous: true,
-  debug: true,
-  listen: true,
-  speed: 1
+// Cria Atryom
+function createArtyom(speed = 1) {
+  const config = {
+    lang: 'pt-PT',
+    continuous: true,
+    debug: true,
+    listen: true,
+    speed: speed
+  };
+
+  return artyom.initialize(config);
 };
 
-artyom.initialize(config);
+createArtyom();
+
+// Configuração Artyom
+function configureArtyom() {
+  var valor = document.querySelector("#velocidade").value;
+
+  createArtyom(valor);
+  $('body').dimmer('show');
+};
 
 artyom.say("Seja bem-vindo. Como posso ajudar?");
 
@@ -36,15 +49,7 @@ var funcSaudadao = {
     if (i == 0 || i == 1) {
       artyom.sayRandom('Oi', 'Olá');
     } else if (i == 2) {
-      artyom.say('Bom dia!', {
-        onStart: function () {
-          artyom.fatality();
-          artyom.dontObey();
-        },
-        onEnd: function () {
-          artyom.initialize(config);
-        }
-      });
+      artyom.say('Bom dia!');
     } else if (i == 3) {
       artyom.say('Sou uma máquina, então sim');
     }
@@ -107,6 +112,12 @@ artyom.redirectRecognizedTextOutput(function (texto, final) {
     input.value = '.';
   }
 });
+
+function enviaComando() {
+  var input = document.querySelector("#texto").value;
+
+  artyom.simulateInstruction(input);
+};
 
 artyom.addCommands(funcSaudadao);
 artyom.addCommands(funcHoras);
