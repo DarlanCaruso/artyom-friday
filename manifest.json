@@ -3,18 +3,18 @@
   "name": "Reconhecimendo de Voz em Javascript",
   "icons": [
     {
-      "src": "/img/.png",
-      "type": "image/png",
+      "src": "/img/question.svg",
+      "type": "image/svg",
       "sizes": "128x128"
     },
     {
-      "src": "/img/.png",
-      "type": "image/png",
+      "src": "/img/question.svg",
+      "type": "image/svg",
       "sizes": "512x512"
     }
   ],
   "start_url": "/",
-  "background_color": "#bdc3c7",
+  "background_color": "#2f3640",
   "display": "browser",
-  "theme_color": "#1abc9c"
+  "theme_color": "#0097e6"
 }

@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#1abc9c">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>F.R.I.D.A.Y.</title>
-  <link rel="shortcut icon" href="img/.png">
+  <link rel="shortcut icon" href="img/question32x32.png">
   <link rel="stylesheet" href="semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="css/estilo.css">
   <link rel="manifest" href="manifest.json">
@@ -16,7 +16,7 @@
 
 <body>
   <!-- Menu -->
-  <div class="ui large top fixed hidden menu">
+  <div class="ui large top fixed hidden secondary pointing menu" id="menufixo">
     <div class="ui container">
       <a class="active item" href="#inicio">Ínicio</a>
       <a class="item" href="#dicas">Dicas</a>
@@ -29,12 +29,11 @@
   </div>
 
   <!-- Sidebar Menu -->
-  <div class="ui vertical inverted sidebar menu">
+  <div class="ui vertical sidebar menu">
     <a class="active item" href="#inicio">Ínicio</a>
     <a class="item" href="#dicas">Dicas</a>
     <a class="item" href="#configuracoes">Configurações</a>
     <a class="item" href="#sobre">Sobre</a>
-    <a class="item" href="https://github.com/DarlanCaruso/artyom-friday/" target="_blank">GitHub</a>
   </div>
 
 
@@ -81,37 +80,50 @@
           <div class="sub header">Veja o que o programa pode fazer:</div>
         </div>
       </h1>
-      <div class="ui padded text fluid container segment justified">
-        <h2 class="ui header">
-          <div class="content">
-            Saudações
-            <div class="sub header">Você pode conversar com o agente.</div>
-          </div>
-        </h2>
-        <p>Digite ou fale comandos como: "Bom dia", "Olá", "Oi" ou "Tudo bem?" para que o agente converse com você.</p>
-      </div>
 
-      <div class="ui padded text fluid container segment">
-        <h2 class="ui header">
+      <div class="ui padded container three stackable cards">
+        <div class="ui card blue">
           <div class="content">
-            Data e hora
-            <div class="sub header">Você pode pergutar a data e a hora atual.</div>
+            <h3 class="ui header">
+              <div class="content">
+                Saudações
+                <div class="sub header">Você pode conversar com o agente.</div>
+              </div>
+            </h3>
+            <p class="justify">Digite ou fale comandos como:
+              <strong>"Bom dia"</strong>,
+              <strong>"Olá"</strong>,
+              <strong>"Oi"</strong> ou
+              <strong>"Tudo bem?"</strong> para que o agente converse com você.</p>
           </div>
-        </h2>
-        <p>Digite ou fale comandos como: "Que horas são?" ou "Que dia é hoje?" para que o agente informe o dia ou a hora.</p>
-      </div>
-
-      <div class="ui padded text fluid container segment">
-        <h2 class="ui header">
+        </div>
+        <div class="ui card blue">
           <div class="content">
-            Páginas da Web
-            <div class="sub header">Você pode abrir as principais redes sociais.</div>
+            <h3 class="ui header">
+              <div class="content">
+                Data e hora
+                <div class="sub header">Você pode pergutar a data e a hora atual.</div>
+              </div>
+            </h3>
+            <p class="justify">Digite ou fale comandos como:
+              <strong>"Que horas são?"</strong> ou
+              <strong>"Que dia é hoje?"</strong> para que o agente informe o dia ou a hora.</p>
           </div>
-        </h2>
-        <p>Digite ou fale o comando: "Abra meu
-          <strong>...</strong>" e informe a rede social para que o agente abra a respectiva página para você.
-          <em>O agente abre atualmente o Google, Facebook, Instagram e Twitter.</em>
-        </p>
+        </div>
+        <div class="ui card blue">
+          <div class="content">
+            <h3 class="ui header">
+              <div class="content">
+                Páginas da Web
+                <div class="sub header">Você pode abrir as principais redes sociais.</div>
+              </div>
+            </h3>
+            <p class="justify">Digite ou fale o comando: "Abra meu
+              <strong>...</strong>" e informe a rede social para que o agente abra a respectiva página para você.
+              <em>O agente abre atualmente o Google, Facebook, Instagram e Twitter.</em>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -169,7 +181,7 @@
       </h2>
 
       <div class="ui padded text fluid container segment">
-        <p>Este projeto foi desenvolvido para a discipina de
+        <p class="justify">Este projeto foi desenvolvido para a discipina de
           <strong>Inteligência Artificial e Computacional</strong> no curso de
           <strong>Ciência da Computação</strong> do Centro Universitário Anhnaguera de Niterói - UNIAN. Foi consumida neste programa
           a API
@@ -185,34 +197,20 @@
     </section>
 
     <!-- Rodape -->
-    <div class="ui inverted vertical footer segment">
+    <footer class="ui inverted vertical footer segment">
       <div class="ui container">
-        <div class="ui stackable inverted divided equal height stackable grid">
-          <div class="three wide column">
-            <h4 class="ui inverted header">About</h4>
-            <div class="ui inverted link list">
-              <a href="#" class="item">Sitemap</a>
-              <a href="#" class="item">Contact Us</a>
-              <a href="#" class="item">Religious Ceremonies</a>
-              <a href="#" class="item">Gazebo Plans</a>
+        <h4 class="ui inverted centered header">Créditos
+          <p>
+            <div>Icones criado por
+              <a href="https://www.flaticon.com/authors/cursor-creative" title="Cursor Creative">Cursor Creative</a>, retirados do site
+              <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> licenciado por
+              <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0"
+                target="_blank">CC 3.0 BY</a>.
             </div>
-          </div>
-          <div class="three wide column">
-            <h4 class="ui inverted header">Services</h4>
-            <div class="ui inverted link list">
-              <a href="#" class="item">Banana Pre-Order</a>
-              <a href="#" class="item">DNA FAQ</a>
-              <a href="#" class="item">How To Access</a>
-              <a href="#" class="item">Favorite X-Men</a>
-            </div>
-          </div>
-          <div class="seven wide column">
-            <h4 class="ui inverted header">Footer Header</h4>
-            <p>Extra space for a call to action inside the footer that could help re-engage users.</p>
-          </div>
-        </div>
+          </p>
+        </h4>
       </div>
-    </div>
+    </footer>
   </div>
 
   <!-- Dimmer -->

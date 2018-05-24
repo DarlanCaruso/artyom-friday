@@ -1,5 +1,13 @@
 /* Meus estilos */
 
+footer a {
+  color: #00a8ff;
+}
+
+#menufixo {
+  background-color: white;
+}
+
 .ui.input {
   margin-top: 50px;
 }
@@ -14,6 +22,14 @@
 
 .configuracoes .ui.button {
   margin: 10px 0;
+}
+
+.card {
+  padding: 10px !important;
+}
+
+.justify {
+  text-align: justify;
 }
 
 /* Semantic */
