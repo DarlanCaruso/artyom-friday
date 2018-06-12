@@ -2,6 +2,11 @@
 
 Projeto de reconhecimento de voz e ação com JavaScript utilizando a API [Artyom.js](https://github.com/sdkcarlos/artyom.js).
 
+### Pré-requisitos
+
+- Node
+- Browser com suporte a _webkitSpeechRecognition_. Veja a lista de navegadores com suporte [aqui](https://caniuse.com/#feat=speech-recognition).
+
 ### Instalação
 
 Baixe os arquivos do projeto, navegue até a pasta pelo terminal e execute o comando abaixo para instalar as depêndencias.
@@ -10,22 +15,13 @@ Baixe os arquivos do projeto, navegue até a pasta pelo terminal e execute o com
 npm install
 ```
 
+_Obs.:_ Caso não possua o `http-server` instalado na máquina, execute o comando `npm i -g http-server`
+
 ### Executando projeto
 
 Depois de todas as depêndencias instaladas, digite o comando abaixo para executar o projeto.
 É necessário que você possua um microfone para testar o F.R.I.D.A.Y.
 
 ```sh
-npm start
+npm run static
 ```
-
-### SSL Certificate
-
-É gerado uma simulação de um certificado SSL para acessar o microfone no navegador Chrome. Em caso de bloqueio de acesso basta ignora-lo.
-Se houver erro em executar o comando *npm start* seu SSL Key pode ter expirado, para isso basta executar o commando e testar o projeto novamente:
-
-```sh
-openssl req -newkey rsa:2048 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem
-```
-
-O seu novo Key SSL tem validade de 10 dias.
